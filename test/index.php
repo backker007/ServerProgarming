@@ -219,7 +219,7 @@
         $found_countries = array();
 
         // ดึงรายชื่อไฟล์ทั้งหมดที่ต้องการค้นหา
-        $files = glob('C:\xampp\htdocs\test\Document/*.txt');
+        $files = glob('C:\xampp\htdocs\ServerProgarming\test\Document\*.txt');
 
         // ค้นหาข้อความในแต่ละไฟล์
         foreach ($files as $file) {
