@@ -21,29 +21,31 @@
       <div align="center">(THAI STROKE SOCIETY)</div>
     </div>
     <form
-      action="imformation"
+      action="data.php"
       id="demo1"
       class="demo"
       style="display: none"
       autocomplete="off"
       uk-grid
+      method="post"
     >
       <ol>
         <li class="name">
           <span class="details"
-            >ชื่อ <input type="text" placeholder="ชื่อ" /> </span
+            >ชื่อ <input type="text" placeholder="ชื่อ" name="name" /> </span
           >นามสกุล
-          <input type="text" placeholder="นามสกุล" />
+          <input type="text" placeholder="นามสกุล" name="surname" />
         </li>
         <li>
           วัน เดือน ปีเกิด <br />
-          <input type="date" />
+          <input type="date" name="date" /> />
         </li>
         <li>
           ตำแหน่ง หรือยศ <br />
-          <input type="text" placeholder="ตำแหน่ง หรือยศ" />
+          <input type="text" placeholder="ผศ. ดร." name="rank" />
         </li>
-        <li>ที่อยู่
+        <li>
+          ที่อยู่
           <div class="im">
             <label class="h2">ตำบล / แขวง</label>
             <input name="district" type="text" />
@@ -65,9 +67,11 @@
           </div>
         </li>
         <li>
-            เบอร์โทรศัพท์ <br>
-            <input type="text">
+          เบอร์โทรศัพท์ <br />
+          <input type="text" name="TELEPHONE" placeholder="Phonenumber"/>
         </li>
+
+        <button type="submit">ส่งข้อมูล</button>
       </ol>
     </form>
     <script src="node.js"></script>
@@ -104,6 +108,5 @@
         },
       });
     </script>
-    <script src="node.js"></script>
   </body>
 </html>
