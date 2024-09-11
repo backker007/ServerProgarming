@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="Thai">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thai Stroke Society</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="./jquery.Thailand.js/dist/jquery.Thailand.min.css"
+    />
+  </head>
+  <body>
+    <h3>เลขที่_________</h3>
+    <nav align="center">
+      <img src="img/20240707_113505553_iOS.jpg" alt="photo" />
+    </nav>
+    <div class="resume">
+      <div align="center">ใบสมัคร</div>
+      <div align="center">สมาชิกสมาคมโรคหลอดเลือดสมองไทย</div>
+      <div align="center">(THAI STROKE SOCIETY)</div>
+    </div>
+    <form
+      action="imformation"
+      id="demo1"
+      class="demo"
+      style="display: none"
+      autocomplete="off"
+      uk-grid
+    >
+      <ol>
+        <li class="name">
+          <span class="details"
+            >ชื่อ <input type="text" placeholder="ชื่อ" /> </span
+          >นามสกุล
+          <input type="text" placeholder="นามสกุล" />
+        </li>
+        <li>
+          วัน เดือน ปีเกิด <br />
+          <input type="date" />
+        </li>
+        <li>
+          ตำแหน่ง หรือยศ <br />
+          <input type="text" placeholder="ตำแหน่ง หรือยศ" />
+        </li>
+        <li>ที่อยู่
+          <div class="im">
+            <label class="h2">ตำบล / แขวง</label>
+            <input name="district" type="text" />
+          </div>
+
+          <div class="im">
+            <label class="h2">อำเภอ / เขต</label>
+            <input name="amphoe" type="text" />
+          </div>
+
+          <div class="im">
+            <label class="h2">จังหวัด</label>
+            <input name="province" type="text" />
+          </div>
+
+          <div class="im">
+            <label class="h2">รหัสไปรษณีย์</label>
+            <input name="zipcode" type="text" />
+          </div>
+        </li>
+        <li>
+            เบอร์โทรศัพท์ <br>
+            <input type="text">
+        </li>
+      </ol>
+    </form>
+    <script src="node.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/JQL.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/typeahead.bundle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.js"
+    ></script>
+    <script type="text/javascript">
+      $.Thailand({
+        database: "./jquery.Thailand.js/database/db.json",
+
+        $district: $('#demo1 [name="district"]'),
+        $amphoe: $('#demo1 [name="amphoe"]'),
+        $province: $('#demo1 [name="province"]'),
+        $zipcode: $('#demo1 [name="zipcode"]'),
+        onDataFill: function (data) {
+          console.info("Data Filled", data);
+        },
+        onLoad: function () {
+          console.info("Autocomplete is ready!");
+          $("#loader, .demo").toggle();
+        },
+      });
+    </script>
+    <script src="node.js"></script>
+  </body>
+</html>
